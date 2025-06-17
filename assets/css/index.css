@@ -9,27 +9,27 @@
 }
 
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Playpen Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/playpen-sans-v21-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/playpen-sans-v21-latin-regular.woff2") format("woff2");
 }
-/* playpen-sans-600 - latin */
+
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Playpen Sans";
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/playpen-sans-v21-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/playpen-sans-v21-latin-600.woff2") format("woff2");
 }
-/* playpen-sans-700 - latin */
+
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Playpen Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/playpen-sans-v21-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/playpen-sans-v21-latin-700.woff2") format("woff2");
 }
 
 body,
@@ -74,6 +74,25 @@ p {
 .header-socials img {
   width: 24px;
   height: 24px;
+}
+
+.header-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  background-color: var(--color-light-pink);
+  padding: 10px 0;
+}
+
+.header-navigation a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all 1s ease;
+}
+
+.header-navigation a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Layout */
