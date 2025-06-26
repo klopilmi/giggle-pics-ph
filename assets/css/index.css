@@ -136,17 +136,46 @@ p {
 }
 
 .banner-intro h1 {
-  color: var(--color-pink);
   font-weight: 700;
   font-size: 40px;
   margin: auto;
+  -webkit-text-stroke: 0.7px var(--color-black);
+}
+
+.char1,
+.char6 {
+  color: var(--color-pink);
+}
+
+.char2,
+.char7 {
+  color: var(--color-blue);
+}
+.char3,
+.char8 {
+  color: var(--color-muted);
+}
+.char4 {
+  color: var(--color-light-pink);
+}
+.char5 {
+  color: var(--color-yellow);
 }
 
 .banner-intro p {
   color: var(--color-black);
   font-weight: 700;
   font-size: 18px;
-  margin: 0 0 32px 0;
+}
+
+.banner-intro button {
+  margin: 20px 0 32px 0;
+}
+
+/* ===== Featured Items Section ===== */
+
+.featured-items {
+  background: var(--color-light-pink);
 }
 
 /* ====== Responsive Layout ====== */
@@ -194,6 +223,6 @@ p {
   }
 
   .banner-img-container img {
-    width: 80%;
+    width: 90%;
   }
 }
