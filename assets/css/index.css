@@ -182,7 +182,7 @@ p {
 }
 
 .categories .primary-container {
-  padding: 40px 0;
+  padding: 40px 16px;
 }
 
 .category-wrapper {
@@ -249,7 +249,57 @@ p {
   filter: brightness(1.1);
 }
 
+/* ===== Qoute Layout ===== */
+
+.qoute {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-blue);
+  padding: 40px 0;
+  min-height: 200px;
+  margin-bottom: 100px;
+}
+
+.qoute-container {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  width: 80%;
+  padding: 16px;
+  background-color: var(--color-pink);
+  color: var(--color-white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+}
+
+.qoute-container strong {
+  font-size: 28px;
+}
+
+.qoute-btn {
+  color: var(--color-black) !important;
+  background-color: var(--color-yellow) !important;
+  padding: 10px 15px !important;
+  width: fit-content !important;
+}
+
 /* ====== Responsive Layout ====== */
+
+@media (min-width: 425px) {
+  .qoute {
+    min-height: 130px;
+    margin-bottom: 130px;
+  }
+}
+
 @media (min-width: 768px) {
   /* ===== Header Layout ===== */
   .header-main {
@@ -301,7 +351,13 @@ p {
   /* ===== Featured Categories Layout =====  */
 
   .categories .primary-container {
-    padding: 80px 0;
+    padding: 80px 16px;
+  }
+
+  /* ===== Qoute Layout =====  */
+  .qoute {
+    min-height: 120px;
+    margin-bottom: 90px;
   }
 }
 

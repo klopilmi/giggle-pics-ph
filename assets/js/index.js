@@ -6,6 +6,7 @@ import {
     navigations,
     socials,
 } from "../../static-data/headerData.js";
+import { qoute } from "../../static-data/qouteData.js";
 
 // ================ Header Data =======================
 
@@ -75,7 +76,7 @@ bannerSection.appendChild(bannerContainer);
 
 // ================ Categories Data =======================
 
-const categorySection = document.getElementById("category-section");
+const categorySection = document.getElementById("category-wrapper");
 
 categories.forEach((cat) => {
   const card = document.createElement("div");
@@ -95,3 +96,26 @@ categories.forEach((cat) => {
   const btn = card.querySelector(".shop-btn");
   btn.style.backgroundColor = cat.color;
 });
+
+// ================ Qoute Data =======================
+
+const qouteSection = document.getElementById("qoute-section");
+
+const qouteContainer = document.createElement("div");
+qouteContainer.className = "qoute-container";
+
+const strongEl = document.createElement("strong");
+strongEl.innerText = qoute.question;
+
+const pEl = document.createElement("p");
+pEl.innerText = qoute.text;
+
+const btnEl = document.createElement("button");
+btnEl.innerText = qoute.buttonText;
+btnEl.type = "button";
+btnEl.className = "qoute-btn gp-button";
+
+qouteContainer.appendChild(strongEl);
+qouteContainer.appendChild(pEl);
+qouteContainer.appendChild(btnEl);
+qouteSection.appendChild(qouteContainer);
