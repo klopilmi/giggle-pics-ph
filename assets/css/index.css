@@ -52,6 +52,7 @@ p {
   padding: 10px;
   text-align: center;
   font-weight: 700;
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* ====== Header Main Layout ====== */
@@ -137,9 +138,10 @@ p {
 
 .banner-intro h1 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 60px;
   margin: auto;
   -webkit-text-stroke: 0.7px var(--color-black);
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .char1,
@@ -172,10 +174,79 @@ p {
   margin: 20px 0 32px 0;
 }
 
-/* ===== Featured Items Section ===== */
+/* ===== Featured Categories Section ===== */
 
-.featured-items {
+.categories {
   background: var(--color-light-pink);
+  background: rgba(252, 213, 206, 0.5);
+}
+
+.categories .primary-container {
+  padding: 40px 0;
+}
+
+.category-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.category-card {
+  position: relative;
+  padding: 32px;
+  border-radius: 30px;
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  overflow: hidden;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.category-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(176, 159, 159, 0.5); /* semi-transparent black */
+  backdrop-filter: blur(2px); /* add blur to background */
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.card-overlay h3 {
+  font-size: 40px;
+  font-weight: 700;
+  -webkit-text-stroke: 1px var(--color-black);
+  text-shadow: 2px 3px 5px rgba(0, 0, 0.3, 0.3);
+}
+
+.shop-btn {
+  color: var(--color-black);
+  border: none;
+  padding: 5px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: "Playpen Sans", cursive;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in;
+}
+
+.shop-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 /* ====== Responsive Layout ====== */
@@ -215,6 +286,7 @@ p {
   .banner-container {
     flex-direction: row;
     align-items: center;
+    padding: 40px 40px;
   }
 
   .banner-img-container,
@@ -223,6 +295,19 @@ p {
   }
 
   .banner-img-container img {
-    width: 90%;
+    width: 60%;
+  }
+
+  /* ===== Featured Categories Layout =====  */
+
+  .categories .primary-container {
+    padding: 40px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* ===== Banner Layout ===== */
+  .banner-intro h1 {
+    font-size: 80px;
   }
 }
