@@ -1,16 +1,28 @@
-import categories from "../../static-data/featuredCategories.js";
-import navigations from "../../static-data/headerNavigation.js";
-import socials from "../../static-data/socials.js";
+import { banner } from "../../static-data/bannerData.js";
+import categories from "../../static-data/categoriesData.js";
+import {
+    annnoucement,
+    logo,
+    navigations,
+    socials,
+} from "../../static-data/headerData.js";
 
-const navigationBar = document.getElementById("navigation-bar");
+// ================ Header Data =======================
 
-navigations.forEach((item) => {
-  const a = document.createElement("a");
-  a.className = "nav-item";
-  a.href = item.url;
-  a.textContent = item.text;
-  navigationBar.appendChild(a);
-});
+const annnoucementEl = document.querySelector(".header-announcement");
+annnoucementEl.innerHTML = annnoucement;
+
+const logoEl = document.querySelector(".header-logo-container");
+const a = document.createElement("a");
+a.href = logo.href;
+
+const img = document.createElement("img");
+img.alt = logo.title;
+img.src = logo.logoUrl;
+img.className = "header-logo";
+
+a.appendChild(img);
+logoEl.appendChild(a);
 
 const headerSocials = document.getElementById("header-socials");
 
@@ -27,6 +39,41 @@ socials.forEach((social) => {
   a.appendChild(img);
   headerSocials.appendChild(a);
 });
+
+const navigationBar = document.getElementById("navigation-bar");
+navigations.forEach((item) => {
+  const a = document.createElement("a");
+  a.className = "nav-item";
+  a.href = item.url;
+  a.textContent = item.text;
+  navigationBar.appendChild(a);
+});
+
+// ================ Banner Data =======================
+
+const bannerSection = document.getElementById("banner-section");
+const bannerContainer = document.createElement("div");
+bannerContainer.className = "banner-container";
+
+const imgContainer = document.createElement("div");
+imgContainer.className = "banner-img-container";
+imgContainer.innerHTML = `<img
+            src="${banner.imgSrc}"
+            alt="${banner.imgAlt}"
+          />`;
+
+const introContainer = document.createElement("div");
+introContainer.className = "banner-intro";
+introContainer.innerHTML = `<h1 id="rainbow-heading">${banner.title}</h1>
+          <p>${banner.tag}</p>
+          <button class="gp-button" type="button">Shop Now</button>
+`;
+
+bannerContainer.appendChild(imgContainer);
+bannerContainer.appendChild(introContainer);
+bannerSection.appendChild(bannerContainer);
+
+// ================ Categories Data =======================
 
 const categorySection = document.getElementById("category-section");
 
