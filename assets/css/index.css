@@ -1,5 +1,5 @@
 :root {
-  --color-primary: #f16393;
+  --color-pink: #f16393;
   --color-blue: #92d8d6;
   --color-muted: #d2cac8;
   --color-light-pink: #ffddde;
@@ -39,7 +39,13 @@ p {
   font-family: "Playpen Sans", cursive;
 }
 
-/* Announcement Bar */
+.primary-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 16px;
+}
+
+/* ====== Announcement Bar ====== */
 .header-announcement {
   background-color: var(--color-blue);
   color: var(--color-white);
@@ -49,7 +55,7 @@ p {
   font-weight: 700;
 }
 
-/* Header Main Layout */
+/* ====== Header Main Layout ====== */
 .header-main {
   display: flex;
   flex-direction: column;
@@ -80,13 +86,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 32px;
+  gap: 16px;
   background-color: var(--color-light-pink);
   padding: 10px 0;
 }
 
 .header-navigation a {
-  color: var(--color-primary);
+  color: var(--color-pink);
   text-decoration: none;
   transition: all 1s ease;
 }
@@ -95,9 +101,50 @@ p {
   text-decoration: underline;
 }
 
-.ban
+/* ====== Banner Section ====== */
 
-/* Responsive Layout */
+.banner {
+  height: calc(100vh - 255px);
+}
+
+.banner-bg {
+  background-image: url('../images/banner-flowers.webp'); /* or .png / .webp */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner-img-container img {
+  width: 60%;
+  height: auto;
+  display: block; /* removes tiny gaps under image */
+  padding: 31px 16px;
+  margin: auto;
+}
+
+.banner-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-intro h1 {
+  color: var(--color-pink);
+  font-weight: 700;
+  font-size: 40px;
+  margin: auto
+}
+
+.banner-intro p {
+  color: var(--color-black);
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 0 32px 0;
+  
+}
+
+/* ====== Responsive Layout ====== */
 @media (min-width: 768px) {
   .header-main {
     flex-direction: row;
@@ -109,6 +156,10 @@ p {
     flex: 1;
     display: flex;
     justify-content: center;
+  }
+
+  .header-navigation {
+    gap: 32px;
   }
 
   .header-socials {

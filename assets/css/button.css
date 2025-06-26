@@ -1,0 +1,15 @@
+.gp-button {
+  background-color: var(--color-pink);
+  color: var(--color-white);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 50px;
+  font-family: "Playpen Sans", cursive;
+  transition: all 0.2s ease-in;
+}
+
+.gp-button:hover {
+ filter: brightness(1.25);
+ cursor: pointer;
+}
