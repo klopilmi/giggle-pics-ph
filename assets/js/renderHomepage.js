@@ -1,5 +1,6 @@
 import { banner } from "../../static-data/bannerData.js";
 import categories from "../../static-data/categoriesData.js";
+import { featuredEvent } from "../../static-data/featuredEvent.js";
 import {
   annnoucement,
   logo,
@@ -8,6 +9,7 @@ import {
 } from "../../static-data/headerData.js";
 import { products } from "../../static-data/productsData.js";
 import { qoute } from "../../static-data/qouteData.js";
+import { reviews } from "../../static-data/reviewsData.js";
 import { studioData } from "../../static-data/studioData.js";
 import { applyRainbowHeading } from "./utils.js";
 
@@ -69,9 +71,10 @@ export const RenderHomepage = () => {
 
   const introContainer = document.createElement("div");
   introContainer.className = "banner-intro";
-  introContainer.innerHTML = `<h1 id="rainbow-heading">${banner.title}</h1>
-          <p>${banner.tag}</p>
-          <button class="gp-button" type="button">Shop Now</button>
+  introContainer.innerHTML = `
+  <h1 id="rainbow-heading">${banner.title}</h1>
+  <p>${banner.tag}</p>
+  <button class="gp-button" type="button">Shop Now</button>
 `;
 
   bannerContainer.appendChild(imgContainer);
@@ -157,8 +160,75 @@ export const RenderHomepage = () => {
   const studioContainer = document.createElement("div");
   studioContainer.className = "primary-container";
 
-  studioContainer.innerHTML = `<div class="studio-img-wrapper"> <img src="${studioData.imageUrl}" alt="${studioData.title}" class="studio-image" /> </div>
-    <div class="studio-details-wrapper"><h4>${studioData.title}</h4><p>${studioData.description}</p><button class="gp-button">Read More</button></div>`;
+  studioContainer.innerHTML = `
+  <div class="studio-img-wrapper">
+    <img src="${studioData.imageUrl}" alt="${studioData.title}" class="studio-image" />
+  </div>
+  <div class="studio-details-wrapper">
+    <h4>${studioData.title}</h4>
+    <p>${studioData.description}</p>
+    <button class="gp-button">Read More</button
+  div>`;
 
   studioSection.appendChild(studioContainer);
+
+  const eventReviewsSection = document.getElementById("event-reviews-section");
+
+  const eventRevContainer = document.createElement("div");
+  eventRevContainer.className = "primary-container";
+
+  const eventWrapper = document.createElement("div");
+  eventWrapper.className = "event-wrapper";
+  eventWrapper.innerHTML = `
+  <h4>Recent Event</h4> 
+  <div class="event-details"> 
+    <div class="event-img-wrapper"> 
+      <img src="${featuredEvent.imageUrl}" alt="${featuredEvent.title}" class="event-image" /> 
+    </div>
+    <div class="event-content-wrapper">
+      <h5>${featuredEvent.title}</h5>
+      <p>${featuredEvent.excerpt}</p>
+      <button class="gp-button">Read More</button>
+    </div>
+  </div>`;
+
+  const reviewsWrapper = document.createElement("div");
+  reviewsWrapper.className = "reviews-wrapper";
+  reviewsWrapper.innerHTML = `
+  <h4>Customer Reviews</h4>
+  <div class="reviews-details">
+    <p class="review-text">${reviews[0].review}</p>
+    <em class="review-name">${reviews[0].name}</em>
+    <div class="review-buttons">
+      <button id="prevReview" class="gp-button">Back</button>
+      <button id="nextReview" class="gp-button">Next</button>
+    </div>
+  </div>
+`;
+
+  let currentReview = 0;
+  let currentName = 0;
+
+  function updateReview() {
+    const reviewText = reviewsWrapper.querySelector(".review-text");
+    const reviewName = reviewsWrapper.querySelector(".review-name");
+    reviewText.textContent = reviews[currentReview].review;
+    reviewName.textContent = reviews[currentName].name;
+  }
+
+  reviewsWrapper.querySelector("#prevReview").addEventListener("click", () => {
+    currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+    currentName = (currentName - 1 + reviews.length) % reviews.length;
+    updateReview();
+  });
+
+  reviewsWrapper.querySelector("#nextReview").addEventListener("click", () => {
+    currentReview = (currentReview + 1) % reviews.length;
+    currentName = (currentName + 1) % reviews.length;
+    updateReview();
+  });
+
+  eventRevContainer.appendChild(eventWrapper);
+  eventRevContainer.appendChild(reviewsWrapper);
+  eventReviewsSection.appendChild(eventRevContainer);
 };

@@ -46,6 +46,12 @@ h4 {
   margin: 0 0 32px 0;
 }
 
+h5 {
+  margin: 0;
+  color: var(--color-black);
+  font-size: 18px;
+}
+
 .primary-container {
   max-width: 1400px;
   margin: auto;
@@ -378,6 +384,83 @@ h4 {
   height: 200px;
 }
 
+/* ===== Event and Reviews Layout ===== */
+
+.event-reviews-section {
+  padding: 40px 0;
+}
+
+.event-reviews-section .primary-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.event-wrapper {
+  width: 100%;
+}
+
+.event-details,
+.event-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.event-details {
+  background-color: rgba(146, 216, 214, 0.3);
+  border-radius: 15px;
+  padding: 16px;
+}
+
+.event-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.event-img-wrapper img {
+  width: 200px;
+  height: 200px;
+}
+
+.event-content-wrapper button {
+  padding: 2px 25px !important;
+}
+
+.reviews-wrapper {
+  width: 100%;
+}
+
+.reviews-details {
+  background: rgba(254, 200, 56, 0.4);
+  color: var(--color-black);
+  padding: 16px;
+  border-radius: 15px;
+}
+
+.review-text {
+  text-align: justify;
+  padding-bottom: 16px;
+  height: 100px;
+}
+
+.review-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+
+.review-buttons button {
+  padding: 2px 25px !important;
+}
+
 /* ====== Responsive Layout ====== */
 
 @media (min-width: 425px) {
@@ -386,7 +469,8 @@ h4 {
     margin-bottom: 130px;
   }
 
-  .studio-section img {
+  .studio-section img,
+  .event-img-wrapper img {
     width: 250px;
     height: 250px;
   }
@@ -486,6 +570,46 @@ h4 {
 
   .studio-details-wrapper button {
     width: 100%;
+  }
+
+  /* ===== Event and Reviews Layout =====  */
+
+  .event-reviews-section .primary-container {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .event-wrapper,
+  .reviews-wrapper {
+    max-width: 50%;
+  }
+
+  .event-img-wrapper img {
+    width: 180px;
+    height: 180px;
+  }
+  .event-content-wrapper {
+    justify-content: space-between;
+  }
+
+  .event-content-wrapper button {
+    align-self: flex-start;
+  }
+
+  .event-details,
+  .reviews-details {
+    flex-direction: row;
+    height: 200px;
+  }
+
+  .event-details div {
+    width: 50%;
+  }
+
+  .event-content-wrapper {
+    align-items: start;
+    text-align: left;
+    height: 100%;
   }
 }
 
