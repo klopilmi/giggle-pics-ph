@@ -1,11 +1,12 @@
 import { banner } from "../../static-data/bannerData.js";
 import categories from "../../static-data/categoriesData.js";
 import {
-    annnoucement,
-    logo,
-    navigations,
-    socials,
+  annnoucement,
+  logo,
+  navigations,
+  socials,
 } from "../../static-data/headerData.js";
+import { products } from "../../static-data/productsData.js";
 import { qoute } from "../../static-data/qouteData.js";
 import { applyRainbowHeading } from "./utils.js";
 
@@ -126,8 +127,28 @@ export const RenderHomepage = () => {
 
   // ================ New In Data =======================
 
-  // const newinSection = document.getElementById("newin-section");
+  const newinSection = document.getElementById("newin-section");
 
-  // const qouteContainer = document.createElement("div");
-  // qouteContainer.className = "primary-container";
+  const newinContainer = document.createElement("div");
+  newinContainer.className = "primary-container";
+
+  const h4El = document.createElement("h4");
+  h4El.innerText = "NEW IN";
+
+  const cardWrrapper = document.createElement("div");
+  cardWrrapper.className = "newin-wrapper";
+
+  products.forEach((product) => {
+    const card = document.createElement("div");
+    card.className = "newin-card";
+
+    card.innerHTML = `<img src="${product.imageUrl}" alt="${product.name}" class="product-image" />
+    <div class="prod-details"><strong>${product.name}</strong><p>${product.price}</p></div>`;
+
+    cardWrrapper.appendChild(card);
+  });
+
+  newinContainer.appendChild(h4El);
+  newinContainer.appendChild(cardWrrapper);
+  newinSection.appendChild(newinContainer);
 };

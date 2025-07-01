@@ -39,6 +39,13 @@ p {
   font-family: "Playpen Sans", cursive;
 }
 
+h4 {
+  color: var(--color-pink);
+  font-size: 26px;
+  text-align: center;
+  margin: 0 0 32px 0;
+}
+
 .primary-container {
   max-width: 1400px;
   margin: auto;
@@ -292,6 +299,41 @@ p {
   width: fit-content !important;
 }
 
+/* ====== New In Layout ====== */
+
+.newin-section {
+  padding: 0 0 40px 0;
+}
+
+.newin-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.newin-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newin-card img {
+  height: 200px;
+  width: 200px;
+}
+
+.prod-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-black);
+}
+
 /* ====== Responsive Layout ====== */
 
 @media (min-width: 425px) {
@@ -360,6 +402,17 @@ p {
     min-height: 120px;
     margin-bottom: 90px;
   }
+
+  /* ===== New In Layout =====  */
+
+  .newin-section {
+    padding-bottom: 80px;
+  }
+
+  .newin-card img {
+    height: 250px;
+    width: 250px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -368,8 +421,14 @@ p {
     padding: 15px 40px;
   }
 
-
   .banner-intro h1 {
     font-size: 80px;
+  }
+
+  /* ===== New In Layout =====  */
+
+  .newin-card img {
+    height: 300px;
+    width: 300px;
   }
 }
