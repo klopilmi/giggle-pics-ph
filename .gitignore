@@ -1,1 +1,5 @@
-.vercel
+# Vercel deployment folder (optional, only if it's local and auto-generated)
+.vercel/
+
+# Node.js dependencies
+node_modules/

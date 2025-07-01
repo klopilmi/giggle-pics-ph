@@ -1,5 +1,5 @@
 export const banner = {
-  imgSrc: "../assets/images/banner-featured-pic.webp",
+  imgSrc: "/images/banner-featured-pic.webp",
   imgAlt: "GigglePics - Photostrip",
 
   title: "Welcome!",

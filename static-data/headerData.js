@@ -2,23 +2,23 @@ export const annnoucement = "New Sale is on the way";
 
 export const logo = {
   title: "Giggle Pics",
-  logoUrl: "../assets/images/giggle-pics-logo.png",
+  logoUrl: "/images/giggle-pics-logo.png",
   href: "index.html",
 };
 
 export const socials = [
   {
-    imgUrl: "../assets/images/facebook.png",
+    imgUrl: "/images/facebook.png",
     alt: "Facebook",
     className: "facebook",
   },
   {
-    imgUrl: "../assets/images/instagram.png",
+    imgUrl: "/images/instagram.png",
     alt: "Instagram",
     className: "instragram",
   },
   {
-    imgUrl: "../assets/images/tiktok.png",
+    imgUrl: "/images/tiktok.png",
     alt: "TikTok",
     className: "tiktok",
   },
@@ -34,7 +34,7 @@ export const navigations = [
     url: "#",
   },
   {
-    text: "Products",
+    text: "Shop",
     url: "#",
   },
   {
