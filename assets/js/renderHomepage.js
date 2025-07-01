@@ -8,6 +8,7 @@ import {
 } from "../../static-data/headerData.js";
 import { products } from "../../static-data/productsData.js";
 import { qoute } from "../../static-data/qouteData.js";
+import { studioData } from "../../static-data/studioData.js";
 import { applyRainbowHeading } from "./utils.js";
 
 export const RenderHomepage = () => {
@@ -151,4 +152,13 @@ export const RenderHomepage = () => {
   newinContainer.appendChild(h4El);
   newinContainer.appendChild(cardWrrapper);
   newinSection.appendChild(newinContainer);
+
+  const studioSection = document.getElementById("studio-section");
+  const studioContainer = document.createElement("div");
+  studioContainer.className = "primary-container";
+
+  studioContainer.innerHTML = `<div class="studio-img-wrapper"> <img src="${studioData.imageUrl}" alt="${studioData.title}" class="studio-image" /> </div>
+    <div class="studio-details-wrapper"><h4>${studioData.title}</h4><p>${studioData.description}</p><button class="gp-button">Read More</button></div>`;
+
+  studioSection.appendChild(studioContainer);
 };
