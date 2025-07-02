@@ -136,7 +136,7 @@ export const RenderHomepage = () => {
   const newinSection = document.getElementById("newin-section");
 
   const newinContainer = document.createElement("div");
-  newinContainer.className = "primary-container";
+  newinContainer.className = "primary-container fade-in-on-scroll";
 
   const h4El = document.createElement("h4");
   h4El.innerText = "NEW IN";
@@ -162,7 +162,7 @@ export const RenderHomepage = () => {
 
   const studioSection = document.getElementById("studio-section");
   const studioContainer = document.createElement("div");
-  studioContainer.className = "primary-container";
+  studioContainer.className = "primary-container fade-in-on-scroll";
 
   studioContainer.innerHTML = `
   <div class="studio-img-wrapper">
@@ -181,7 +181,7 @@ export const RenderHomepage = () => {
   const eventReviewsSection = document.getElementById("event-reviews-section");
 
   const eventRevContainer = document.createElement("div");
-  eventRevContainer.className = "primary-container";
+  eventRevContainer.className = "primary-container fade-in-on-scroll";
 
   const eventWrapper = document.createElement("div");
   eventWrapper.className = "event-wrapper";
@@ -244,7 +244,7 @@ export const RenderHomepage = () => {
     "#inquiry-contact-section"
   );
   const inquiryContactContainer = document.createElement("div");
-  inquiryContactContainer.className = "primary-container";
+  inquiryContactContainer.className = "primary-container fade-in-on-scroll";
 
   const formWrapper = document.createElement("div");
   formWrapper.className = "form-details";
