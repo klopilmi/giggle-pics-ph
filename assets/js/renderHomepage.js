@@ -1,5 +1,6 @@
 import { banner } from "../../static-data/bannerData.js";
 import categories from "../../static-data/categoriesData.js";
+import { contactDetails } from "../../static-data/contactDetails.js";
 import { featuredEvent } from "../../static-data/featuredEvent.js";
 import {
   annnoucement,
@@ -157,6 +158,8 @@ export const RenderHomepage = () => {
   newinContainer.appendChild(cardWrrapper);
   newinSection.appendChild(newinContainer);
 
+  // ================ Studio Data =======================
+
   const studioSection = document.getElementById("studio-section");
   const studioContainer = document.createElement("div");
   studioContainer.className = "primary-container";
@@ -172,6 +175,8 @@ export const RenderHomepage = () => {
   div>`;
 
   studioSection.appendChild(studioContainer);
+
+  // ================ Event and Reviews Data =======================
 
   const eventReviewsSection = document.getElementById("event-reviews-section");
 
@@ -233,13 +238,51 @@ export const RenderHomepage = () => {
   eventRevContainer.appendChild(reviewsWrapper);
   eventReviewsSection.appendChild(eventRevContainer);
 
+  // ================ Inquiry and Contact Data =======================
+
   const inquiryContactSection = document.querySelector(
     "#inquiry-contact-section"
   );
   const inquiryContactContainer = document.createElement("div");
   inquiryContactContainer.className = "primary-container";
 
+  const formWrapper = document.createElement("div");
+  formWrapper.className = "form-details";
+
+  const inquiryh4 = document.createElement("h4");
+  inquiryh4.innerText = "Message Us";
+
   const form = inquiryForm();
-  inquiryContactContainer.appendChild(form);
+
+  const contactWrapper = document.createElement("div");
+  contactWrapper.className = "contact-details";
+
+   const contactItems = document.createElement("div");
+  contactItems.className = "contact-items";
+
+  const contacth4 = document.createElement("h4");
+  contacth4.innerText = "Contact Us";
+
+  contactDetails.forEach((contact) => {
+    const contactDiv = document.createElement("div");
+    contactDiv.className = "contact";
+
+    const img = document.createElement("img");
+    img.src = contact.icon;
+    img.alt = contact.name;
+
+    const p = document.createElement("p");
+    p.textContent = contact.contact;
+
+    contactDiv.append(img, p);
+    contactItems.appendChild(contactDiv);
+  });
+
+  formWrapper.appendChild(inquiryh4);
+  formWrapper.appendChild(form);
+  contactWrapper.appendChild(contacth4);
+  contactWrapper.appendChild(contactItems);
+  inquiryContactContainer.appendChild(formWrapper);
+  inquiryContactContainer.appendChild(contactWrapper);
   inquiryContactSection.appendChild(inquiryContactContainer);
 };

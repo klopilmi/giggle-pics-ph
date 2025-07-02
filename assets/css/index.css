@@ -461,6 +461,50 @@ h5 {
   padding: 2px 25px !important;
 }
 
+/* ====== Inquiry Form and Contact Details Layout ====== */
+
+.inquiry-contact-section {
+  padding: 0 0 40px 0;
+}
+
+.inquiry-contact-section .primary-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+}
+
+.form-details,
+.contact-details {
+  width: 100%;
+}
+
+.form-details h4,
+.contact-details h4 {
+  width: 100%;
+  text-align: center;
+}
+
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.contact-details .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 5px 0;
+}
+
+.contact-details .contact img {
+  height: 25px;
+  width: 25px;
+}
+
 /* ====== Responsive Layout ====== */
 
 @media (min-width: 425px) {
@@ -579,6 +623,11 @@ h5 {
     gap: 32px;
   }
 
+  .event-reviews-section .primary-container h4 {
+    width: 100%;
+    text-align: left;
+  }
+
   .event-wrapper,
   .reviews-wrapper {
     max-width: 50%;
@@ -610,6 +659,26 @@ h5 {
     align-items: start;
     text-align: left;
     height: 100%;
+  }
+
+  /* ====== Inquiry Form and Contact Details Layout ====== */
+
+  .inquiry-contact-section .primary-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    gap: 32px;
+  }
+
+  .form-details h4,
+  .contact-details h4 {
+    width: 100%;
+    text-align: start;
+  }
+
+  .contact-details .contact {
+    justify-content: start;
+    align-items: start;
   }
 }
 

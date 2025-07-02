@@ -1,6 +1,6 @@
 export function inquiryForm() {
   const form = document.createElement("form");
-  form.className = "contact-form";
+  form.className = "inquiry-form";
 
   const nameInput = document.createElement("input");
   nameInput.type = "text";
@@ -17,6 +17,7 @@ export function inquiryForm() {
   messageInput.placeholder = "Your Message";
 
   const submitBtn = document.createElement("button");
+  submitBtn.className = "gp-button";
   submitBtn.type = "submit";
   submitBtn.textContent = "Send";
 

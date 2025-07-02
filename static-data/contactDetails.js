@@ -1,10 +1,12 @@
 export const contactDetails = [
   {
-    icon: "/images/email.png",
-    label: "gigglepicsPh@gmail.com",
+    icon: "/images/email.webp",
+    name: "Email Address",
+    contact: "gigglepicsPh@gmail.com",
   },
   {
     icon: "/images/phone.png",
-    label: "+63 999 999 9999",
+    name: "Phone Number",
+    contact: "+63 999 999 9999",
   },
 ];
