@@ -11,6 +11,7 @@ import { products } from "../../static-data/productsData.js";
 import { qoute } from "../../static-data/qouteData.js";
 import { reviews } from "../../static-data/reviewsData.js";
 import { studioData } from "../../static-data/studioData.js";
+import { inquiryForm } from "./inquiryForm.js";
 import { applyRainbowHeading } from "./utils.js";
 
 export const RenderHomepage = () => {
@@ -231,4 +232,14 @@ export const RenderHomepage = () => {
   eventRevContainer.appendChild(eventWrapper);
   eventRevContainer.appendChild(reviewsWrapper);
   eventReviewsSection.appendChild(eventRevContainer);
+
+  const inquiryContactSection = document.querySelector(
+    "#inquiry-contact-section"
+  );
+  const inquiryContactContainer = document.createElement("div");
+  inquiryContactContainer.className = "primary-container";
+
+  const form = inquiryForm();
+  inquiryContactContainer.appendChild(form);
+  inquiryContactSection.appendChild(inquiryContactContainer);
 };
